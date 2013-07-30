@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  vote_value: 1
+  user_id: 
+  translation_id: 
+
+two:
+  vote_value: 1
+  user_id: 
+  translation_id: 
