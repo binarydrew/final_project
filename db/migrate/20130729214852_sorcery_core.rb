@@ -1,9 +1,9 @@
 class SorceryCore < ActiveRecord::Migration
   def self.up
     create_table :users do |t|
-      t.string :first_name,
-      t.string :last_name,
-      t.references :lang_pref,
+      t.string :first_name
+      t.string :last_name
+      t.references :language, index: true
       t.string :username,         :null => false  # if you use another field as a username, for example email, you can safely remove this field.
       t.string :email,            :default => nil # if you use this field as a username, you might want to make it :null => false.
       t.string :crypted_password, :default => nil

@@ -3,5 +3,5 @@ class User < ActiveRecord::Base
   belongs_to :language
   has_many :phrases
   has_many :votes
-  has_many :translations
+  has_many :trans
 end
