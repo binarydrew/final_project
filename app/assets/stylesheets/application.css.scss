@@ -1,0 +1,157 @@
+/*@import "bootstrap";
+@import "bootstrap-responsive";*/
+
+* {
+ font-family: sans-serif; 
+}
+section {
+  display: block;
+  clear:both;
+}
+header {
+  clear: both;
+  margin: 15px 0;
+  height: 75px;
+  width: 100%;
+  background-color: #362c89;
+}
+
+a, a:hover, a:visited, a:active {
+  text-decoration:none;
+  color: white;
+}
+
+.notificaton-bar {
+    background-color: #362C89;
+    color: white;
+    margin-bottom: 10px;
+    padding: 0 10px;
+    display: block;
+    clear: both;
+}
+
+.notice {
+    position: relative;
+    display: inline-block;
+    float: right;
+    background-color: inherit;
+    font-size: 1.5em;
+    min-width: 140px;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 5px;
+    margin-bottom: 10px
+}
+
+#loginForm label {
+  display: block;
+  width: 75px;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#loginForm a, #loginForm span {
+  font-size: 10px;
+}
+
+#loginForm a {
+  color: orange;
+}
+
+#loginForm input {
+  float: right; 
+  clear: both;
+}
+
+.login-form-controls {
+  margin-bottom: 15px;
+  line-height: 13px
+}
+
+.login-form-inputs, .login-form-labels, .login-form-info, .login-form-submit {
+   display: inline-block;
+}
+
+.login-form-inputs {
+  width: 60%;
+  float: right;
+}
+
+.login-form-labels {
+  width: 40%;
+  padding-left: 5px;
+}
+
+.login-form-info {
+  line-height: 10px;  
+}
+
+.login-form-submit {
+   float: right; 
+}
+
+.notice > #loginForm {
+    background-color: white !important;
+    color: black !important;
+    border: solid 1px black;
+    box-shadow: 5px 5px 10px lightgray;
+  
+    display: block;
+    width: 300px;
+    padding: 30px 20px;
+    font-size: .75em;
+    text-align: left;
+    background-color: inherit;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -246px;
+    margin-top: -250px;   
+    border-radius: 5px;
+  
+    zoom: 1;
+    filter: alpha(opacity=0);
+    opacity: 0; 
+  
+    transition:
+      opacity .25s ease-in-out;
+
+/*    margin-top: 0px;
+    opacity: 1; */
+}
+
+.notice:hover {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;  
+}
+
+.notice:hover > #loginForm {
+    margin-top: 0;
+    border-top-right-radius: 0;
+    
+    zoom: 1;
+    filter: alpha(opacity=1);
+    opacity: 1;
+}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  
+  padding: 2px 5px;
+  
+  border: 0;
+  box-shadow: 3px 3px darkgray,
+    0 0 1px 1px lightgray;
+  height: 25px;
+  
+  margin-bottom: 3px;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  outline: none;
+  box-shadow: 
+    inset 0 1px 1px rgba(0, 0, 0, 0.075), 
+    0 0 8px rgba(54, 44, 137, .6);
+  border: solid 1px rgba(54, 44, 137, 1);
+}

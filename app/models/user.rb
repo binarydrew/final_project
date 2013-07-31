@@ -3,5 +3,14 @@ class User < ActiveRecord::Base
   belongs_to :language
   has_many :phrases
   has_many :votes
-  has_many :trans
+  has_many :translations
+
+  validates_presence_of :username
+  validates_confirmation_of :password
+  validates_presence_of :password, :on => :create
+  validates_presence_of :email
+  validates_uniqueness_of :email
+
+
+
 end

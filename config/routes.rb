@@ -1,8 +1,6 @@
 FinalProject::Application.routes.draw do
 
-
- 
-  # root 'welcome#index'
+  root to: 'static_pages#index'
 
   resources :users
 end
