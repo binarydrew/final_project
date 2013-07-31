@@ -1,0 +1,50 @@
+
+
+<div class="container">
+
+    <form id="signup">
+
+        <div class="header">
+        
+            <h3>Sign Up</h3>
+            
+            
+            
+        </div>
+        
+        <div class="sep"></div>
+
+        <div class="inputs">
+        
+            <!-- <input type="email" placeholder="e-mail" autofocus /> -->
+        		
+        		<%= form_for @user do |f| %>
+
+        		<%= f.label :first_name %>
+						<%= f.text_field :first_name %><br />
+
+						<%= f.label :last_name %>
+						<%= f.text_field :last_name %><br />
+
+						<%= f.label :email %>
+						<%= f.email_field :email %><br />
+            
+            <%= f.label :password %>
+						<%= f.password_field :password %><br />
+
+						<%= f.label :password_confirmation %>
+						<%= f.password_field :password_confirmation %><br />
+            
+           
+						
+            <%=  f.submit %>
+
+           
+            <!-- <a id="submit" href="#">SIGN UP FOR INVITE NOW</a> -->
+            <% end %>
+        
+        </div>
+
+    </form>
+
+</div>
