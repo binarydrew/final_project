@@ -13,8 +13,8 @@ class UsersController < ApplicationController
     
     if @user.save
       auto_login(@user)
-      redirect_to root_path,  notice: "User was successfully created"
-        
+      redirect_to root_path,  
+      flash[:notice] = "User was successfully created"
      
       
     else

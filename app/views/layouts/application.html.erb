@@ -12,8 +12,8 @@
     <a class="brand" href="#">Title</a>
     <ul class="nav pull-right">
       <% if current_user %>
-          <li class="button"><%= link_to "Logout #{current_user.first_name}", session_path(current_user), method: :delete %></li>
-            <li class="button"><%= link_to "Profile", user_path(params[:id]) %>
+          <li class="button"><%= link_to "Logout #{current_user.username}", session_path(current_user), method: :delete %></li>
+            <li class="button"><%= link_to "Profile", edit_user_path(current_user) %>
           <% else %>
             <li class="button"><%= link_to "Login", new_session_path %></li>
             <li class="button"><%= link_to "Signup", new_user_path %></li>
@@ -22,7 +22,10 @@
     </ul>
   </div>
 </div>
-
+ <% flash.each do |name, msg| -%>
+      <%= content_tag :div, msg, class: name %>
+    <% end -%>
+ 
 <%= yield %>
 
 </body>
