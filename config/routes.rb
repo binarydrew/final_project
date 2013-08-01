@@ -1,7 +1,8 @@
 FinalProject::Application.routes.draw do
 
-  root to: 'static_pages#index'
+  root 'phrases#new'
 
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  resources :phrases, except: :destroy
 end

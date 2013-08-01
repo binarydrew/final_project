@@ -1,0 +1,16 @@
+<%= form_for @phrase do |f| %>
+
+  <%= f.label :sentence_that_needs_to_be_translated %>
+  <%= f.text_field :content %><br /><br /> 
+
+
+  <%= f.label :sentence_posted_in %>
+  <%= f.collection_select(:posted_lang_id, Language.all, :id, :lang_name) %><br /><br />
+
+  <%= f.label :translate_to %>
+  <%= f.collection_select(:trans_lang_id, Language.all, :id, :lang_name) %><br /><br />
+
+        						
+  <%=  f.submit "Translate" %>           
+            
+<% end %>
