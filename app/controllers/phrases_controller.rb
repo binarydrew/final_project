@@ -9,14 +9,19 @@ class PhrasesController < ApplicationController
 	end
 
   def create
-    @phrase = Phrase.new(phrase_params)
-    @phrase.user_id = current_user.id
-    if @phrase.save
-      redirect_to phrase_path      
-    else      
-      redirect_to root_path
-      flash[:notice] = "Invalid input, please try again"
+  	if logged_in?
+    	@phrase = Phrase.new(phrase_params)
+    	@phrase.user_id = current_user.id
+    	if @phrase.save
+      	redirect_to phrase_path      
+    	else      
+      	redirect_to root_path
+      	flash[:notice] = "Invalid input or two languages cannot be the same "
     end
+  	else
+  		redirect_to root_path
+      flash[:notice] = "Please log in or create account first"
+  	end
   end
 
 	def show
