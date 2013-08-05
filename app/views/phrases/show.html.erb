@@ -1,1 +1,9 @@
-@phrase.content
+<%= @phrase.content %></br></br>
+
+Please translate to: <%= @phrase.trans_lang.lang_name %></br></br>
+
+<ul>
+<% @phrase.translations.each do |translation| %>
+	<li> <%= translation.content %> </li>
+<% end %>
+</ul>

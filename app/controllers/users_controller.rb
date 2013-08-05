@@ -13,13 +13,13 @@ class UsersController < ApplicationController
     
     if @user.save
       auto_login(@user)
-      redirect_to root_path,  
+      redirect_to root_path
       flash[:notice] = "User was successfully created"
      
       
     else
       flash[:alert] = "User could not be created."
-      redirect_to root_path
+      redirect_to new_user_path
     end
   end
 

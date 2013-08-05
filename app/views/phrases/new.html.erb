@@ -15,3 +15,18 @@
   <%=  f.submit "Translate" %>           
             
 <% end %>
+
+
+
+
+
+
+<br/><br/><br/><br/>
+<ul>
+
+<% @sort_pt.each do |pt| %>
+	<li><%= link_to pt.content, pt %> by <%= pt.user.username %> <%= created_updated(pt) %></li>
+<% end %>
+</ul>
+
+ 

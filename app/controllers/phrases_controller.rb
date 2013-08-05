@@ -2,10 +2,13 @@ class PhrasesController < ApplicationController
 
 	def index
 		@phrases = Phrase.all
+
 	end
 
 	def new
 		@phrase = Phrase.new
+		pt = Phrase.all + Translation.all
+		@sort_pt = pt.sort_by{|s| s.created_at}.reverse
 	end
 
   def create
@@ -13,7 +16,7 @@ class PhrasesController < ApplicationController
     	@phrase = Phrase.new(phrase_params)
     	@phrase.user_id = current_user.id
     	if @phrase.save
-      	redirect_to phrase_path      
+      	redirect_to @phrase
     	else      
       	redirect_to root_path
       	flash[:notice] = "Invalid input or two languages cannot be the same "
