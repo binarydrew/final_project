@@ -29,6 +29,7 @@ class PhrasesController < ApplicationController
 
 	def show
 		@phrase = Phrase.find(params[:id])
+		@translation = Phrase.find(params[:id])
 	end
 
 	def update
