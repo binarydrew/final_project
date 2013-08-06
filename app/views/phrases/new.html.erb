@@ -24,8 +24,9 @@
 <br/><br/><br/><br/>
 <ul>
 
+
 <% @sort_pt.each do |pt| %>
-	<li><%= link_to pt.content, pt_link(pt) %> by <%= pt.user.username %> <%= created_updated(pt) %> <%= time_calc(pt) %></li>
+		<li class= "<%= feed_color(pt) %>"><%= link_to pt.content, pt_link(pt) %> by <%= pt.user.username %> <%= created_updated(pt) %> <%= time_calc(pt) %></li>
 <% end %>
 </ul>
 

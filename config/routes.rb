@@ -4,6 +4,8 @@ FinalProject::Application.routes.draw do
 
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
-  resources :phrases, except: :destroy
-  #resources :translations
+  resources :phrases, except: :destroy do
+  	resources :translations
+	end
+
 end

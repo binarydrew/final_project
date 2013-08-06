@@ -1,6 +1,15 @@
 module PhrasesHelper
 
-	def feed_color
+	def feed_color(pt)
+		if pt.class.name == "Phrase" && pt.translations.empty?
+			return "trans_red"	
+		elsif pt.class.name == "Phrase" && ((Time.now - pt.translations.last.created_at)/60 /60) > 21
+			return "trans_red1"	
+		elsif pt.class.name == "Phrase"
+			return "ph_green"
+		else pt.class.name == "Translation"
+			return "trans_yellow"
+		end
 		
 
 		
@@ -28,3 +37,7 @@ module PhrasesHelper
 	end
 
 end
+
+
+
+

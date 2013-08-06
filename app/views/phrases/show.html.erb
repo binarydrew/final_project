@@ -8,4 +8,7 @@ Please translate to: <%= @phrase.trans_lang.lang_name %></br></br>
 <% end %>
 </ul>
 
-
+ <%= form_for [@phrase, @translation] do |f| %>	  
+	 <%= f.text_area :content, placeholder: "Enter translations here" %></br>
+	 <%=  f.submit %> 	
+<% end %>

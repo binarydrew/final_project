@@ -20,7 +20,7 @@ class PhrasesController < ApplicationController
     	else      
       	redirect_to root_path
       	flash[:notice] = "Invalid input or two languages cannot be the same "
-    end
+    	end
   	else
   		redirect_to root_path
       flash[:notice] = "Please log in or create account first"
@@ -29,7 +29,7 @@ class PhrasesController < ApplicationController
 
 	def show
 		@phrase = Phrase.find(params[:id])
-		@translation = Phrase.find(params[:id])
+		@translation = Translation.new
 	end
 
 	def update
