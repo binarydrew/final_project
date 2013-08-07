@@ -44,13 +44,15 @@ a:hover, a:focus {
 }
 
 .content-list {
-	display: inline-block;
+	/*display: inline-block;*/
 	padding: 5px;
+	list-style: none;
 }
 
 .well {
 	margin:auto;
 	max-width: 500px;
+	overflow-y: scroll;
 }
 
 .by-who {
@@ -59,3 +61,16 @@ a:hover, a:focus {
 	text-align: right;
 }
 
+.improve_font{
+	color: blue;
+	font-size: 12px;
+}
+
+.move_to_center {
+	margin: 0 auto;
+	display: block; 
+}
+
+.move_to_cent {
+	text-align: center;
+}

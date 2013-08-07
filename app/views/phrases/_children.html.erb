@@ -1,7 +1,7 @@
 <ul>
 	<% children.each do |child| %>
 		<li class="translation">
-			<%= child.content %> <%= link_to "improve it", phrase_path(@phrase, parent: child.id) %>
+			<%= child.content %> <%= link_to "improve it", phrase_path(@phrase, parent: child.id), :class => "improve_font" %>
 			<% if has_children?(child) %>
 				<%= render "children", children: show_children(child) %>
 			<% end %>

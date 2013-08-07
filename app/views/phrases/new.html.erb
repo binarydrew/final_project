@@ -1,36 +1,59 @@
+<div class="jumbotron move_to_cent">
+  <h1>Translate the world, <br/><img src="<%= asset_path( 'logo.png' ) %>" class="img-responsive logo"/>ogether</h1>
+</div>
+
+<div class="page-header">
+  <h1>Translate the world, <br/><img src="<%= asset_path( 'logo.png' ) %>" class="img-responsive logo"/>ogether</h1>
+</div>
+
 <%= form_for @phrase do |f| %>
-
-
-  <%= f.label :sentence_that_needs_to_be_translated %>
-  <%= f.text_field :content, :class=>"form-control" %><br /><br /> 
-
-
-  <%= f.label :sentence_posted_in %>
-  <%= f.collection_select(:posted_lang_id, Language.all, :id, :lang_name) %><br /><br />
-
-  <%= f.label :translate_to %>
-  <%= f.collection_select(:trans_lang_id, Language.all, :id, :lang_name) %><br /><br />
-
-        						
-  <%=  f.submit "Translate" %>           
-            
+	<div class="row">
+	  <div class="col-lg-12">
+	    <div class="input-group">
+	      <div class="input-group-btn">     
+	        <%= f.collection_select(:posted_lang_id, Language.all, :id, :lang_name, {}, {:class=>'form-control'}) %>
+  			</div>
+  				<%= f.text_field :content, :class=>"form-control" %>
+	  		<div class="input-group-btn">
+	        <%= f.collection_select(:trans_lang_id, Language.all, :id, :lang_name, {}, {:class=>'form-control'}) %>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<br />
+	<%=  f.submit "Translate", :class => 'btn btn-primary btn-lg move_to_center' %> 
 <% end %>
-
-
 
 
 
 
 <br/><br/><br/><br/>
-<ul>
+
 
 <div class="well">
-<% @sort_pt.each do |pt| %>
-		<li class= "<%= feed_color(pt) %> content-list"><%= link_to pt.content, pt_link(pt), :class=>"content-anchor"%> <br/><span class="by-who">by <%= pt.user.username %> <%= created_updated(pt) %> <%= time_calc(pt) %></li></span><br />
-<% end %>
-</ul>
+
+
+
+	<% @sort_pt.each do |pt| %>
+			<div class= "<%= feed_color(pt) %>">
+				<div class= "panel-heading">
+					<h3 class="panel-title"><%= link_to pt.content, pt_link(pt), :class=>"content-anchor"%></h3>
+				</div>
+					<span class="by-who">
+					by <%= pt.user.username %> <%= 
+					created_updated(pt) %> <%= time_calc(pt) 
+					%>
+					</span>
+			</div>
+	<% end %>
+
+
+
+
 </div>
 
-<div class="panel panel-danger">BLAHHHHHHH!!</div>
+
+
+
 
  
