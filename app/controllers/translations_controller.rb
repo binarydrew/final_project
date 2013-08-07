@@ -3,9 +3,8 @@ class TranslationsController < ApplicationController
 def create
   	if logged_in?
   		@phrase = Phrase.find(params[:phrase_id])
-    	@translation = @phrase.translations.build(phrase_params)
+    	@translation = @phrase.translations.build(translation_params)
     	@translation.user_id = current_user.id
-
     	if @translation.save
       	redirect_to @phrase   	
     	else
@@ -19,12 +18,14 @@ def create
   end
 
 
+def new
 
+end
 
 private
 
-	def phrase_params
-    params.require(:translation).permit(:content, :user_id, :phrase_id)
-  end
+	def translation_params
+		params.require(:translation).permit(:content, :parent_id)
+	end
 
 end

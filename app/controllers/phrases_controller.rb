@@ -29,7 +29,10 @@ class PhrasesController < ApplicationController
 
 	def show
 		@phrase = Phrase.find(params[:id])
+		@parent = Translation.find(params[:parent]) if params[:parent]
 		@translation = Translation.new
+		@translation.content = @parent.content if params[:parent]
+		@translations = @phrase.translations.where(parent_id: nil)
 	end
 
 	def update

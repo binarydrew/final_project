@@ -2,13 +2,13 @@
 
 Please translate to: <%= @phrase.trans_lang.lang_name %></br></br>
 
-<ul>
-<% @phrase.translations.each do |translation| %>
-	<li> <%= translation.content %> </li>
-<% end %>
-</ul>
+<%= render "children", children: @translations %>
+
+
+
 
  <%= form_for [@phrase, @translation] do |f| %>	  
 	 <%= f.text_area :content, placeholder: "Enter translations here" %></br>
+	 <%= f.hidden_field :parent_id, value: params[:parent] %>
 	 <%=  f.submit %> 	
 <% end %>

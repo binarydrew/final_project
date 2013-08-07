@@ -2,7 +2,7 @@
 
 
   <%= f.label :sentence_that_needs_to_be_translated %>
-  <%= f.text_field :content %><br /><br /> 
+  <%= f.text_field :content, :class=>"form-control" %><br /><br /> 
 
 
   <%= f.label :sentence_posted_in %>
@@ -24,10 +24,13 @@
 <br/><br/><br/><br/>
 <ul>
 
-
+<div class="well">
 <% @sort_pt.each do |pt| %>
-		<li class= "<%= feed_color(pt) %>"><%= link_to pt.content, pt_link(pt) %> by <%= pt.user.username %> <%= created_updated(pt) %> <%= time_calc(pt) %></li>
+		<li class= "<%= feed_color(pt) %> content-list"><%= link_to pt.content, pt_link(pt), :class=>"content-anchor"%> <br/><span class="by-who">by <%= pt.user.username %> <%= created_updated(pt) %> <%= time_calc(pt) %></li></span><br />
 <% end %>
 </ul>
+</div>
+
+<div class="panel panel-danger">BLAHHHHHHH!!</div>
 
  

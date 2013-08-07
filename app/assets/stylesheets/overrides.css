@@ -1,0 +1,61 @@
+.img-responsive {
+	height: 100px;
+}
+
+a {
+	color: white;
+}
+
+a:hover, a:focus {
+	/*color: rgb(236,236,236);*/
+	text-decoration: none;
+}
+
+.nav-btns {
+	margin-top: 35px;
+}
+
+
+.btn-action {
+	background: rgb(212,91,26);
+}
+
+.navbar {
+	/*position: absolute;*/
+}
+
+.logo {
+	/*position: fixed;*/
+	margin-top: 20px;
+}
+
+.nav-custom {
+	width: 960px;
+	background-color: lightgrey;
+}
+
+.content-anchor {
+	color: navy;
+}
+
+.trans_yellow {
+	margin-top: 5px;
+	border-radius: 5px;
+}
+
+.content-list {
+	display: inline-block;
+	padding: 5px;
+}
+
+.well {
+	margin:auto;
+	max-width: 500px;
+}
+
+.by-who {
+	display: block;
+	font-size: 12px;
+	text-align: right;
+}
+

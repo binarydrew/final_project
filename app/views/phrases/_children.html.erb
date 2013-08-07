@@ -1,0 +1,10 @@
+<ul>
+	<% children.each do |child| %>
+		<li class="translation">
+			<%= child.content %> <%= link_to "improve it", phrase_path(@phrase, parent: child.id) %>
+			<% if has_children?(child) %>
+				<%= render "children", children: show_children(child) %>
+			<% end %>
+		</li>
+	<% end %>
+</ul>

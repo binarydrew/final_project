@@ -7,26 +7,39 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class="navbar">
-  <div class="navbar-inner">
-    <a class="brand" href="/phrases/new">Title</a>
-    <ul class="nav pull-right">
+
+<div class="container">
+  <!-- <div class="nav-custom"> -->
+    <a href="/phrases/new"><img src="<%= asset_path( 'logo.png' ) %>" class="img-responsive logo" alt="Responsive image"/></a>
+
+    <div class="btn-group pull-right nav-btns">
       <% if current_user %>
-          <li class="button"><%= link_to "Logout #{current_user.username}", session_path(current_user), method: :delete %></li>
-            <li class="button"><%= link_to "Profile", edit_user_path(current_user) %>
-          <% else %>
-            <li class="button"><%= link_to "Login", new_session_path %></li>
-            <li class="button"><%= link_to "Signup", new_user_path %></li>
-          <% end %>      
-    </ul>
-  </div>
-</div>
+          <%= link_to "Log Out #{current_user.username}", session_path(current_user), method: :delete, :class=>"btn btn-default" %>
+          <%= link_to "Profile", edit_user_path(current_user), :class=>"btn btn-default" %>
+        <% else %>
+          <button class="btn btn-action"><%= link_to "Login", new_session_path %></button>
+          <button class="btn btn-action"><%= link_to "Signup", new_user_path %></button>
+      <% end %>
+    </div>
+    <hr />
+  <!-- </div> -->
+
+
+
+
+
+
+
+
+
+
+
  <% flash.each do |name, msg| -%>
       <%= content_tag :div, msg, class: name %>
     <% end -%>
  
 <%= yield %>
-
+</div>
 </body>
 </html>
 

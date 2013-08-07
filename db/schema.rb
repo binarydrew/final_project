@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130802193034) do
+ActiveRecord::Schema.define(version: 20130806165905) do
 
   create_table "activities", force: true do |t|
     t.integer  "trackable_id"
@@ -51,8 +51,10 @@ ActiveRecord::Schema.define(version: 20130802193034) do
     t.integer  "phrase_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "parent_id"
   end
 
+  add_index "translations", ["parent_id"], name: "index_translations_on_parent_id"
   add_index "translations", ["phrase_id"], name: "index_translations_on_phrase_id"
   add_index "translations", ["user_id"], name: "index_translations_on_user_id"
 
