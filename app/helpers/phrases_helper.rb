@@ -3,7 +3,7 @@ module PhrasesHelper
 	def feed_color(pt)
 		if pt.class.name == "Phrase" && pt.translations.empty?
 			return "panel panel-success"	
-		elsif pt.class.name == "Phrase" && ((Time.now - pt.translations.last.created_at)/60 /60) > 21
+		elsif pt.class.name == "Phrase" && ((Time.now - pt.translations.last.created_at)/60 /60) > 24
 			return "panel panel-danger"	
 		# elsif pt.class.name == "Phrase"
 		# 	return "panel panel-success"
