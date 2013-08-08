@@ -2,11 +2,11 @@ module PhrasesHelper
 
 	def feed_color(pt)
 		if pt.class.name == "Phrase" && pt.translations.empty?
-			return "panel panel-danger"	
+			return "panel panel-success"	
 		elsif pt.class.name == "Phrase" && ((Time.now - pt.translations.last.created_at)/60 /60) > 21
 			return "panel panel-danger"	
-		elsif pt.class.name == "Phrase"
-			return "panel panel-success"
+		# elsif pt.class.name == "Phrase"
+		# 	return "panel panel-success"
 		else pt.class.name == "Translation"
 			return "panel panel-warning"
 		end
@@ -29,11 +29,11 @@ module PhrasesHelper
 			b = (a / 24).to_i
 			return b.to_s + day_or_days(b)			
 		else
-			if a.round(0) < 1
+			if a.to_i < 1
 				m = ((a-(a.to_i))*60).to_i
 				return m.to_s + minutes_or_min(m)
 			else
-				hour_only = a.round(0)
+				hour_only = a.to_i
 				return hour_only.to_s + hour_or_hours(hour_only)
 			end
 		end
@@ -73,6 +73,16 @@ module PhrasesHelper
 
 	def show_children(parent)
 		parent.children
+	end
+
+	def print_respective_to (pt)
+		if pt.class.name == "Phrase"
+			return "help translate to " + pt.trans_lang.lang_name
+		elsif pt.class.name == "Translation" && !pt.phrase_id.nil?
+			return "translation for " + pt.phrase.content
+		else
+			return ""
+		end
 	end
 
 end

@@ -35,9 +35,12 @@
 
 
 	<% @sort_pt.each do |pt| %>
+		
 			<div class= "<%= feed_color(pt) %>">
 				<div class= "panel-heading">
-					<h3 class="panel-title"><%= link_to pt.content, pt_link(pt), :class=>"content-anchor"%></h3>
+					<h3 class="panel-title"><%= link_to pt.content, pt_link(pt), :class=>"content-anchor"%> </h3>
+				
+				<%= print_respective_to(pt) %>
 				</div>
 					<span class="by-who">
 					by <%= pt.user.username %> <%= 
