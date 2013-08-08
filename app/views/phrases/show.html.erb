@@ -10,6 +10,7 @@ Please translate to: <strong><%= @phrase.trans_lang.lang_name %></strong></br></
 
  <%= form_for [@phrase, @translation] do |f| %>	  
 	 <%= f.text_area :content, placeholder: "Enter translations here", :class => "text_area_style" %></br>
-	 <%= f.hidden_field :parent_id, value: params[:parent] %>
-	 <%=  f.submit %> 	
+	 <%= f.hidden_field :parent_id, value: params[:parent] %></br>
+	 <%=  f.submit 'Translation', :class => 'translation_submit' %> 	
 <% end %>
+

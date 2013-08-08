@@ -76,7 +76,7 @@ a:hover, a:focus {
 }
 
 .font_content{
-	font-family: 'Fauna One', serif;
+	font-family: 'Antic Slab', serif;
 }
 
 .main_phrase_show {
@@ -85,5 +85,12 @@ a:hover, a:focus {
 
 
 .text_area_style {
-	
+	border:2px solid #456879;
+	border-radius:10px;
+	height: 220px;
+	width: 440px;
 }
+
+
+
+
