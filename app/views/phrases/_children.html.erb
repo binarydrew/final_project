@@ -1,11 +1,21 @@
 
 <ul>
 	<% children.each do |child| %>
-		<li class="translation">
+	<div class = "row">
+		<div class="col-1">
+			<%= button_to "aaaa", {controller: "Votes", action: "create"} %>
+		</div>
+
+		
+
+		<div class="col-10">
+			<li class="translation" >
 			<span class = "font_content"> <%= child.content %> </span><%= link_to "improve it", phrase_path(@phrase, parent: child.id), :class => "improve_font" %>
 			<% if has_children?(child) %>
 				<%= render "children", children: show_children(child) %>
 			<% end %>
-		</li>
+			</li>
+		</div>
+	</div>
 	<% end %>
 </ul>

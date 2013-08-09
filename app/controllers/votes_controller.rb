@@ -5,8 +5,7 @@ class VotesController < ApplicationController
 			phrase = Phrase.find(params[:id])
 			phrase.translations
 
-			x
-			@translation = 
+			
 			@vote = translation.votes.new(vote_params)
 			@vote.user_id = current_user.id
 			@vote.save
